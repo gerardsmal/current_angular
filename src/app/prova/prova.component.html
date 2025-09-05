@@ -1,0 +1,78 @@
+<!--
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{cani[0].nome}}</mat-card-title>
+    <mat-card-subtitle>{{cani[0].razza.toUpperCase()}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      {{cani[0].description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton [disabled]=idDisabled>LIKE</button>
+    <button matButton (click)="hoCliccato('aaa')">SHARE</button>
+  </mat-card-actions>
+</mat-card>
+ <button matButton (click)="hoCliccato($event)">Basic</button>
+  <button matButton (click)="reset($event)">Reset</button>
+ <mat-form-field class="example-full-width">
+    <mat-label>Favorite food</mat-label>
+    <input matInput placeholder="Ex. Pizza" [(ngModel)]="title">
+  </mat-form-field>
+  <p>{{title}}</p>
+
+<ng-template *ngIf="daVedere; then bloccoIf; else bloccoElse" #name></ng-template>
+<ng-template #bloccoIf>
+  <p>Sono visibile</p>
+  <p>e sono contento</p>
+</ng-template>
+<ng-template #bloccoElse>
+  <p>Non é visibile</p>
+</ng-template>
+
+<div>
+  <div *ngFor="let persona of persone; index as i, first as isFirst, last as isLast">
+    <div>
+      <li [ngStyle]="{color:persona.colore}">
+        {{i}} : {{isFirst}} / {{isLast}} {{persona.nome}} <strong>{{persona.cognome}}</strong>
+        <span *ngIf="persona.isOnLine"> On line</span>
+        <span *ngIf="!persona.isOnLine"> Off offline</span>
+      </li>
+    </div>
+
+  </div>
+</div>
+<div [ngSwitch]="numero">
+  <p *ngSwitchCase="1">Uno</p>
+  <p *ngSwitchCase="2">Due</p>
+  <p *ngSwitchCase="3">Tre</p>
+  <p *ngSwitchCase="4">Quatro</p>
+  <p *ngSwitchDefault>...Default...</p>
+</div>
+
+<div [ngSwitch]="stringa">
+  <p *ngSwitchCase="'pippo'">Uno string</p>
+  <p *ngSwitchCase="'pluto'">Due string</p>
+  <p *ngSwitchCase="'paperino'">Tre sting</p>
+  <p *ngSwitchDefault>...Default string...</p>
+</div>
+
+<ul>
+  <li *ngFor="let persona of persone; index as i">
+    <div class="cerchio" [ngClass]="persona.isOnLine ? 'cerchioOnline' : 'cerchioOffLine'">{{i}}</div>
+    <p>{{persona.nome}} {{persona.cognome}}</p>
+  </li>
+
+</ul>
+
+<div *ngFor="let persona of data">
+   <p [ngStyle]="{color: persona.colore}">{{persona.nome}} {{persona.cognome}}</p>
+</div>
+<button (click)="mandaDati()">Manda dati...</button>
+-->
+<p>prova component</p>
+<input #inputSaluti value="ciao">
+<button (click)="onClick()">CLick me</button>
