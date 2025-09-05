@@ -12,7 +12,9 @@ import { HighlightDirective } from './diretive/highlight.directive';
 import { ProvaServiceComponent } from './prova-service/prova-service.component';
 import { AboutComponent } from './componenti/about/about.component';
 import { ContactComponent } from './componenti/contact/contact.component';
-import { HomeComponent } from './componenti/home/home.component';         
+import { HomeComponent } from './componenti/home/home.component';
+import { ContattoComponent } from './componenti/contatto/contatto.component';
+import { NotfoundComponent } from './componenti/notfound/notfound.component';         
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HomeComponent } from './componenti/home/home.component';
     ProvaServiceComponent,
     AboutComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    ContattoComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
