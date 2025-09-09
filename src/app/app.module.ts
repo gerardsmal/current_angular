@@ -7,14 +7,17 @@ import { ProvaComponent } from './prova/prova.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule  } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';     
+import {MatSelectModule} from '@angular/material/select';
+
 import { HighlightDirective } from './diretive/highlight.directive';
 import { ProvaServiceComponent } from './prova-service/prova-service.component';
 import { AboutComponent } from './componenti/about/about.component';
 import { ContactComponent } from './componenti/contact/contact.component';
 import { HomeComponent } from './componenti/home/home.component';
 import { ContattoComponent } from './componenti/contatto/contatto.component';
-import { NotfoundComponent } from './componenti/notfound/notfound.component';         
+import { NotfoundComponent } from './componenti/notfound/notfound.component';   
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { NotfoundComponent } from './componenti/notfound/notfound.component';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay())
