@@ -3,8 +3,8 @@
 <div style="display: flex; gap: 20px;">
   <!-- Colonna sinistra: elenco -->
   <div style="width: 30%;" >
-    <div *ngFor="let persona of persone; index as i">
-      <a routerLink="/contact/{{i}}" [ngStyle]="{color: persona.colore}">
+    <div *ngFor="let persona of persone">
+      <a routerLink="/contact/{{persona.id}}" [ngStyle]="{color: persona.colore}">
         {{persona.nome}} {{persona.cognome}}
       </a>
     </div>

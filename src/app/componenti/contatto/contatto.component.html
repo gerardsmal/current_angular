@@ -1,13 +1,46 @@
-<mat-card  appearance="outlined">
-  <mat-card-header>
-    <mat-card-title>Detaglio contatto {{personalContatto.nome}} {{personalContatto.cognome}}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-        <li>Colore preferito : {{personalContatto.colore}} </li>
-        <li class="status-row">
-            <span>Status :</span>
-            <label class="cerchio" [ngClass]="personalContatto.isOnLine ? 'cerchioOnline' : 'cerchioOffline'">
-         </label>
-        </li>
-  </mat-card-content>
+<mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title>Detaglio utente</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+        <mat-card-content>
+            <div class="form-container">
+                <mat-form-field class="form-column">
+                    <mat-label>Nome</mat-label>
+                    <input matInput type="text" name="nome" formControlName="nome">
+                </mat-form-field>
+                <mat-form-field class="form-column">
+                    <mat-label>Cognome</mat-label>
+                    <input matInput type="text" name="cognome" formControlName="cognome">
+                </mat-form-field>
+            </div>
+            <div class="form-container">
+                <mat-form-field class="form-column">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" name="email" formControlName="email">
+                </mat-form-field>
+                <mat-form-field class="form-column">
+                    <mat-label>Colore</mat-label>
+                    <mat-select name="colore" formControlName="colore">
+                        <mat-option value="green">Verde</mat-option>
+                        <mat-option value="red">Rosso</mat-option>
+                        <mat-option value="blu">Blu</mat-option>
+                        <mat-option value="black">Nero</mat-option>
+                        <mat-option value="yellow">Giallo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+            </div>
+            <div class="form-container">
+                <mat-checkbox formControlName="isOnLine">OnLine</mat-checkbox>
+            </div>
+
+            <p>{{msg}}</p>
+        </mat-card-content>
+        <mat-card-footer class="example-card-footer">
+            <button mat-raised-button style="background-color: green;" type="button" (click)="onAnnul()">Annul</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!updateForm.valid">Aggiorna</button>
+            <button mat-raised-button style="background-color: red;" type="button" (click)="onDelete()">Delete</button>
+        </mat-card-footer>
+    </form>
 </mat-card>

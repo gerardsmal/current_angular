@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProvaServiceService } from '../../services/prova-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { BackendService } from '../../services/backend.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,12 +10,19 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements OnInit{
+  response:any;
   persone:any;
-  constructor(private service:ProvaServiceService){
+  constructor(private service:BackendService){
   }
   ngOnInit(): void {
-      this.persone=this.service.getPersonne();
-    }
+      console.log("ngOnInit");
+      this.service.listPersone()
+          .subscribe(resp => {
+              this.response = resp;
+              this.persone = this.response.dati;
+          })
+          
+  }
 
 
    
