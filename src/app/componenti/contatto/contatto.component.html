@@ -24,7 +24,7 @@
                     <mat-select name="colore" formControlName="colore">
                         <mat-option value="green">Verde</mat-option>
                         <mat-option value="red">Rosso</mat-option>
-                        <mat-option value="blu">Blu</mat-option>
+                        <mat-option value="blue">Blu</mat-option>
                         <mat-option value="black">Nero</mat-option>
                         <mat-option value="yellow">Giallo</mat-option>
                     </mat-select>
@@ -37,10 +37,10 @@
 
             <p>{{msg}}</p>
         </mat-card-content>
-        <mat-card-footer class="example-card-footer">
-            <button mat-raised-button style="background-color: green;" type="button" (click)="onAnnul()">Annul</button>
-            <button mat-raised-button color="primary" type="submit" [disabled]="!updateForm.valid">Aggiorna</button>
-            <button mat-raised-button style="background-color: red;" type="button" (click)="onDelete()">Delete</button>
+        <mat-card-footer class="button-group">
+            <button mat-raised-button color="primary"  type="button" (click)="onAnnul()">Annul</button>
+            <button mat-raised-button color="primary"  type="submit" [disabled]="!updateForm.valid">Aggiorna</button>
+            <button mat-raised-button style="background-color: red;"  type="button" (click)="onDelete()">Delete</button>
         </mat-card-footer>
     </form>
 </mat-card>

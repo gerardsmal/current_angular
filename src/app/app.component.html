@@ -1,4 +1,7 @@
-<a routerLink="" style="margin-right: 10px;">Home</a>
-<a routerLink="about" style="margin-right: 10px;">About</a>
-<a routerLink="contact" style="margin-right: 10px;">Contact</a>
+<div *ngIf="auth.isAutentificated()">
+    <button class='btn'><a routerLink="home" style="margin-right: 10px;">Home</a></button>
+    <button class='btn'><a routerLink="about" style="margin-right: 10px;">About</a></button>
+    <button class='btn'><a routerLink="contact" style="margin-right: 10px;">Contact</a></button>
+    <button class='btn btn-danger' (click)="logout()">Logout</button>
+</div>
 <router-outlet></router-outlet>

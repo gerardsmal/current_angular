@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { BackendService } from '../../services/backend.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteContattoComponent } from '../../dialogs/delete-contatto/delete-contatto.component';
 
 @Component({
   selector: 'app-contatto',
@@ -11,8 +13,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContattoComponent implements OnInit {
 
+  readonly dialog = inject(MatDialog);  // inject matdialog
   id: number;
-  personalContatto: any = {};
+  personalContatto: any = {};   
   msg = "";
 
   updateForm: FormGroup = new FormGroup({
@@ -78,7 +81,6 @@ export class ContattoComponent implements OnInit {
       .subscribe((resp:any) => {
         
         if (resp.rc) {
-       
           this.routing.navigate(["/contact"])
             .then(() => {
               window.location.reload();
@@ -86,13 +88,35 @@ export class ContattoComponent implements OnInit {
         } else {
           this.msg = resp.msg;
         }
-       
+        
       })
   
   }
 
-  onDelete() {
-    console.log("onDelete");
+  onDelete(){
+   console.log("onDelete");
+   const enterAnimationDuration:string = '1000ms';
+   const exitAnimationDuration:string = '1000ms';
+   
+    const dialogRef = this.dialog.open(DeleteContattoComponent, {
+      width: '350px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+
+      data: {
+        persona: this.personalContatto
+      } , restoreFocus:false
+    })
+    dialogRef.afterClosed()
+      .subscribe(resp => {
+        if (resp == 'si')
+          this.onDeleteAction();
+      })
+
+
+  }
+
+  onDeleteAction() {
     this.service.removePersona({
       id: this.id
     })

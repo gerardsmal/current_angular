@@ -4,5 +4,6 @@ import { inject } from '@angular/core';
 
 export const authAdminGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService)
+  console.log("authAdminGuard:" + authService.isRoleAdmin());
   return authService.isRoleAdmin();
 };

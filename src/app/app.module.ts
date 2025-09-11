@@ -13,6 +13,7 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';     
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { HighlightDirective } from './diretive/highlight.directive';
 import { ProvaServiceComponent } from './prova-service/prova-service.component';
@@ -20,7 +21,10 @@ import { AboutComponent } from './componenti/about/about.component';
 import { ContactComponent } from './componenti/contact/contact.component';
 import { HomeComponent } from './componenti/home/home.component';
 import { ContattoComponent } from './componenti/contatto/contatto.component';
-import { NotfoundComponent } from './componenti/notfound/notfound.component';   
+import { NotfoundComponent } from './componenti/notfound/notfound.component';
+import { DeleteContattoComponent } from './dialogs/delete-contatto/delete-contatto.component';
+import { SigninComponent } from './componenti/signin/signin.component';
+import { RegistrazioneComponent } from './componenti/registrazione/registrazione.component';   
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import { NotfoundComponent } from './componenti/notfound/notfound.component';
     ContactComponent,
     HomeComponent,
     ContattoComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    DeleteContattoComponent,
+    SigninComponent,
+    RegistrazioneComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,8 @@ import { NotfoundComponent } from './componenti/notfound/notfound.component';
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule
   ],
   providers: [
     provideHttpClient(withFetch()),
